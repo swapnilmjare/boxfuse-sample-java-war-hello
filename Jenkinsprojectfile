@@ -27,7 +27,7 @@ pipeline {
         }
         stage("Deploy to Dev") {
             when {
-                expression { params.BRANCH_NAME == 'DEV' }
+                expression { params.BRANCH_NAME == 'Dev' }
             }
             steps {
                 deployToTomcat('127.0.0.1', 'tomcat', 'tomcat', 'http://127.0.0.1:8081/manager/text', '/boxfuse-sample-java-war-hello', 'Dev')
@@ -38,7 +38,7 @@ pipeline {
                 expression { params.BRANCH_NAME == 'UAT' }
             }
             steps {
-                deployToTomcat('127.0.0.1', 'tomcat', 'tomcat', 'http://127.0.0.1:8081/manager/text', '/boxfuse-sample-java-war-hello', 'QA')
+                deployToTomcat('127.0.0.1', 'tomcat', 'tomcat', 'http://127.0.0.1:8081/manager/text', '/boxfuse-sample-java-war-hello', 'UAT')
             }
         }
         stage("Deploy to Prod") {
