@@ -13,9 +13,9 @@ pipeline {
                 }
             }
          }
-        stage("Testing") {
+        stage("Testing of webhooks") {
             steps {
-                echo "Test Runs"
+                echo "Test Runs the webhoks successfully"
             
             }
         }
